@@ -1,13 +1,35 @@
-img {
-  width: 300px;
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  background-color: rgba(13, 13, 13, 0.882);
 }
-
 .regions {
+  border: 1px solid #000;
+  padding: 10px;
   width: 100%;
   overflow: scroll;
   display: flex;
-  gap: 30px;
+  gap: 10px;
   align-items: center;
+  cursor: pointer;
+  background-color: rgba(113, 149, 181, 0.496);
+}
+
+.regions img {
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
+  padding: 2px;
+  border: 2px solid goldenrod;
+}
+
+.regions h3,
+.champion h3 {
+  color: goldenrod;
+  letter-spacing: 1px;
 }
 
 .regions > div {
@@ -15,18 +37,49 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 50px;
 }
 
+
+
 .champion {
-  width: 50vw;
+  width: 100%;
+  margin-bottom: 10px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  background-color: rgba(61, 208, 208, 0.218);
+}
+
+.champion div {
+  display: flex;
 }
 
 .champion img {
   width: 100%;
   height: 100%;
+  margin-bottom: 10px;
+  border: 2px solid goldenrod;
 }
+
+.littleRegionDiv {
+  width: 20%;
+  padding: 10px;
+}
+
+.imgDiv {
+  padding: 10px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imgDiv div {
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+  background-color: rgba(128, 163, 193, 0.335);
+  border-radius: 60px;
+}
+

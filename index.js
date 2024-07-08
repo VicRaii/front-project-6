@@ -2,6 +2,7 @@ const regions$$ = document.querySelector(".regions");
 
 const entrarEnDetalle = (id) => {
   const detalle = document.querySelector(".detalle");
+
   detalle.innerHTML = "";
   fetch("http://localhost:3000/api/v1/regions/" + id)
     .then((res) => res.json())
@@ -9,10 +10,16 @@ const entrarEnDetalle = (id) => {
       for (const champion of region.champions) {
         detalle.innerHTML += `
             <div class="champion">
-                <div>
-                    <img src="${champion.img}">
+            <div class="littleRegionDiv">
+              <img src=${region.img}>
+            </div>
+                <div class="imgDiv">
+                    <img id="championImg" src="${champion.img}">
+                    <div>
+                    <h3>${champion.name}</h3>
+                    <h4>#${champion.role}</h4>
+                    </div>
                 </div>
-                <h3>${champion.name}</h3>
                 </div>
             `;
       }
