@@ -1,14 +1,14 @@
 const regions$$ = document.querySelector(".regions");
 
-const entrarEnDetalle = (id) => {
-  const detalle = document.querySelector(".detalle");
+const getChampions = (id) => {
+  const champions = document.querySelector(".champions");
 
-  detalle.innerHTML = "";
+  champions.innerHTML = "";
   fetch("http://localhost:3000/api/v1/regions/" + id)
     .then((res) => res.json())
     .then((region) => {
       for (const champion of region.champions) {
-        detalle.innerHTML += `
+        champions.innerHTML += `
             <div class="champion">
             <div class="littleRegionDiv">
               <img src=${region.img}>
@@ -32,14 +32,14 @@ fetch("http://localhost:3000/api/v1/regions")
     for (const region of regions) {
       const divRegion = document.createElement("div");
       const img = document.createElement("img");
-      const nombre = document.createElement("h3");
+      const championName = document.createElement("h3");
 
-      nombre.textContent = region.name;
+      championName.textContent = region.name;
       img.src = region.img;
 
-      divRegion.addEventListener("click", () => entrarEnDetalle(region._id));
+      divRegion.addEventListener("click", () => getChampions(region._id));
 
-      divRegion.append(nombre, img);
+      divRegion.append(championName, img);
       regions$$.append(divRegion);
     }
   });
